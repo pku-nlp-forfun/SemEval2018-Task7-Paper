@@ -26,9 +26,20 @@ We also do some work on feature engineering.~\ref{tab:feature} We test the effec
 \subsection{Different Model}
 \label{sec:different_model}
 
+Except for linear regression model, we also do some experiment on SVM, LinerSVC,DecisionTreeClassifier , TextCNN. 
+
+\begin{enumerate}
+    \item Linear Regression use L2-regularized logistic regression type, cost =0.05, epsilon=0.1
+    \item TextCNN use 128 filter, filter size=[6,7,8], embedding size=300, learning rate = 0.0003, batch size = 64, decay step=1000, train around 300epochs, we get a local optimum train f1 score.
+    \item SVM 
+    \item Decision Tree
+\end{enumerate}
+
 \input{figures/model_comp.tex}
 
 \subsection{Imbalance Data}
 \label{sec:impalance_data}
 
-% \input{figures/imbalance_data.tex}
+The train dataSet is an obvious imbalance set in subTask 1.1 Topic class. So we over-sampling the train set. We, in turn, add subtask1.2 Train Topic, subtask1.2 Test topic, subTask1.2 Train, subTask1.2 Test, subTask1.2 to subtask1.1. And test the effect of over-sampling.
+
+\input{figures/imbalance_data.tex}

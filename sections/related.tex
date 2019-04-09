@@ -82,15 +82,15 @@ We found that the most significant improvement of the performance is related to 
 \subsubsection{Corpus}
 \label{sec:corpus}
 
-We selecting the candidate corpus on the Citation Network Dataset~\footnote{https://aminer.org/citation}~\cite{Tang:08KDD}. This dataset provides the scientific paper of recent years. LightRel chooses DBLP  v5 combined with ACM v9. And extract out only the "Abstract" part of the paper using the regular expression.
+We selecting the candidate corpus on the Citation Network Dataset~\footnote{https://aminer.org/citation ~\cite{Tang:08KDD}}. This dataset provides the scientific paper of recent years. LightRel chooses DBLP  v5 combined with ACM v9. And extract out only the "Abstract" part of the paper using the regular expression.
 
 We have done some combination of selection like testing by using DBLP v5 only or using DBLP v10 combined with ACM v9 etc.
 
 \subsubsection{Embedding Model}
 \label{sec:embedding_model}
 
-There are several tools that we have tried. Such as word2vec~\cite{NIPS2013_5021} by Google (also used in LightRel), fastText by Facebook and BERT by Google.
+There are several tools that we have tried. Such as word2vec~\footnote{\cite{NIPS2013_5021}} by Google (also used in LightRel), fastText by Facebook and BERT by Google.
 
-We build the embedding with 300 dimension vector and skip the words with appearance less than 5 times. We use the mean of all other embeddings to deal with the out-of-vocabulary problem (i.e. the <UNK> token).
+We build the embedding with 300 dimension vector and skip the words with appearance less than 5 times. We use the mean of all other embeddings to deal with the out-of-vocabulary problem (i.e. the [UNK] token).
 
 There are some tests among these three model. The usage of the word2vec and the fastText is very similar. The BERT, because there are too many parameters, need to fine-tune to fit the problem, but we haven't found a good solution, thus the performance is not as good as the previous tools. Finally, we found that fastText perform better than others.

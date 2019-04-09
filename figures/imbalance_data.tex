@@ -1,0 +1,18 @@
+\begin{table}[htbp!] % here top bottom page (! = remove further restrictions)
+    \begin{tabular}{lccccc}
+    \toprule
+        \multicolumn{1}{c}{Training Data}            & \multicolumn{2}{c}{Subtask 1.1 Test}  & \multicolumn{2}{c}{Subtask 1.1 Training} \\
+    \midrule
+        Training Data                                & Macro-F1         & Micro-F1           & Macro-F1         & Micro-F1       \\
+    \midrule
+        only subtask 1.1 training data               & 50.92            & 65.17              & 52.99            & -              \\
+        + subtask 1.2 TOPIC data                     & 50.20            & 64.41              & 52.62            & -              \\
+        + subtask 1.2 and test set TOPIC data        & 50.50            & 68.12              & 46.22            & -              \\
+        + all the subtask 1.2 data                   & \bf53.73         & \bf71.07           & \bf67.20         & -              \\
+        + all the test data                          & 52.82            & 68.26              & 66.73            & -              \\
+        + everything                                 & 52.82            & 70.22              & 66.42            & -              \\
+    \bottomrule
+    \end{tabular}
+\caption{Comparison between using different training data on Scikit Learn logistic regression model in order to solve the data imbalance problem on subtask 1.1 (in \%)}
+\label{tab:data_imbalance}
+\end{table}
