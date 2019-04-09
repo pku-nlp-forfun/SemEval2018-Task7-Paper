@@ -5,5 +5,9 @@ Paper for PKU NLP course report.
 ## Compile
 
 ```sh
-pdflatex main.tex
+bibtex main
+```
+
+```sh
+pdflatex main
 ```
