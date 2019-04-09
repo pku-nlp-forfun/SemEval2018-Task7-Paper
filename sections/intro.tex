@@ -1,2 +1,12 @@
 \section{Introduction}
 \label{sec:introduction}
+
+Semantic relation extraction and classification is a typical task in Nature Language Processing. These relations are successfully used in various NLP applications, such as word sense disambiguation, query expansion, article summarization, question answer or machine translation. A task of semantic relation classification (SRC) is defined as predicting a semantic relationship between two tagged entities in sentences.
+
+However, previous semantic relation classification models rely heavily on high-level lexical and syntactic features obtained from NLP tools, such as part-of-speech (POS) tagger, dependency parser, and named entity recognizer (NER). The classification model relying on such features suffer from the propagation of implicit error od the tools and they are computationally expensive.
+
+Most approaches focus on modeling a single semantic relation and consist in deciding whether a given relation holds between a pair of words (x, y) or not. Another research direction consists of dealing with multiple semantic relations at a time and can be defined as deciding which semantic.
+
+And there exist many types of domain-specific semantic relations between words (entities) expert open-domain semantic relations. In scientific paper abstracts, there are lots of relations between words like usage, topic, result, model, part-whole, etc. Our task is to classify the semantic relation on some scientific paper dataset (SemEval-2018).
+
+In this paper, we propose a way fusion end-to-end method and traditional feature engineer. It is philosophically similar to LightRel~\cite{renslow2018lightrel} which showed the idea is fruitful for SemEval-2018 Task 7. And we use over-sampling to solve the problem of dataset imbalance on subtask1.1.
