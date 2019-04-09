@@ -1,5 +1,93 @@
 \section{Related Work}
+\label{sec:related_work}
 
-\subsection{Others}
+We spent much time working on how to transform the problem into a trainable form. We found that it is also very hard for a human (ourselves) to classify this task.
+(And we have drawn on the experience of the other paper. )
 
-\subsection{Ours}
+\subsection{Naive Idea on Relation}
+\label{sec:naive_idea_on_relation}
+
+We first doing some research on semantic relation typology. There are six major relation types of this competition, USAGE, RESULT, MODEL, PART\_WHOLE, TOPIC, and COMPARISON. And each of them may have a REVERSE relation (except COMPARISON).
+
+The idea is putting connection words between two entities. And calculate the probability of whether it matches which relation type the most.
+
+There are the combinations we've made:
+
+\begin{itemize}
+    \item USAGE
+    \begin{itemize}
+        \item used by
+        \item used for
+        \item applied to
+        \item performed on
+    \end{itemize}
+    \item RESULT
+    \begin{itemize}
+        \item affects
+        \item problem
+        \item yields
+    \end{itemize}
+    \item MODEL
+    \begin{itemize}
+        \item of and observed
+        \item associated to
+    \end{itemize}
+    \item PART\_WHOLE
+    \begin{itemize}
+        \item composed of
+        \item extracted from
+        \item found in
+    \end{itemize}
+    \item TOPIC
+    \begin{itemize}
+        \item presents
+        \item of
+    \end{itemize}
+    \item COMPARISON
+    \begin{itemize}
+        \item compared to
+    \end{itemize}
+\end{itemize}
+
+\subsection{Improved Relation}
+\label{sec:improved_relation}
+
+We try to use the words between two entities as the basis of predicting relation. And we found that LightRel has done a similar thing.
+
+LightRel let all the sentences with the same length (i.e. same dimension feature). But the sentence in the training and test set won't always be the same. Thus they have padded some dummy words into the sentence to fill the empty space.
+
+We think this approach is much more reasonable than the previous one. Because the relation of any two words can easily tell by the connecting words or sentence.
+
+\subsection{Feature Engineering}
+\label{sec:feature_engineering}
+
+We have also observed some of the training samples. And conclude some possible pattern such that if the first word is end with "'s", then it possibly has maybe a sort of belonging relation between them.
+
+In LightRel, they have done many features, they called "word-shape feature", as well.[reference] But by our experiment, we found that. Using these features will only lower the performance. So we only use enable this as comparison purpose.
+
+\begin{itemize}
+    \item any character is capitalized
+    \item a comma is present
+    \item the first character is capitalized and the word is the first in the relation
+    \item the first character is lower-case
+    \item there is an underscore present (representing a multi-word entity)
+    \item if quotes are present in the token
+\end{itemize}
+
+\subsection{Embedding}
+
+We found that the most significant improvement of the performance is related to embedding. There are two subjects: What corpus we choose to calculate the embedding. And what tools to form the embedding. We have made several tests.
+
+\subsubsection{Corpus}
+
+We selecting the candidate corpus on the Citation Network Dataset. This dataset provides the scientific paper of recent years. LightRel chooses DBLP  v5 combined with ACM v9. And extract out only the "Abstract" part of the paper using the regular expression.
+
+We have done some combination of selection like testing by using DBLP v5 only or using DBLP v10 combined with ACM v9 etc.
+
+\subsubsection{Embedding Model}
+
+There are several tools that we have tried. Such as word2vec by Google (also used in LightRel), fastText by Facebook and BERT by Google.
+
+We build the embedding with 300 dimension vector and skip the words with appearance less than 5 times. We use the mean of all other embeddings to deal with the out-of-vocabulary problem (i.e. the <UNK> token).
+
+There are some tests among these three model. The usage of the word2vec and the fastText is very similar. The BERT, because there are too many parameters, need to fine-tune to fit the problem, but we haven't found a good solution, thus the performance is not as good as the previous tools. Finally, we found that fastText perform better than others.
