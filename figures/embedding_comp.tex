@@ -1,0 +1,19 @@
+\begin{table}[htbp!] % here top bottom page (! = remove further restrictions)
+    \begin{tabular}{llcccc}
+    \toprule
+        \multicolumn{2}{c}{Task}                                                 & \multicolumn{2}{c}{Subtask 1.1} & \multicolumn{2}{c}{Subtask 1.2} \\
+    \midrule
+        Corpus & Embedding Model                                                               & Macro-F1        & Micro-F1       & Macro-F1        & Micro-F1       \\
+    \midrule
+        Pre-trained DBLP v5 & word2vec    & 88.99            & 78.99           & 64.99            & 38.99           \\
+        ACM v9 + DBLP v10   & word2vec & 87.99            & 78.99           & 64.99            & 38.99           \\
+        DBLP v5   & word2vec & 87.99            & 78.99           & 64.99            & 38.99           \\
+        DBLP v10   & word2vec & 87.99            & 78.99           & 64.99            & 38.99           \\
+        ACM v9 + DBLP v10   & fastText & 87.99            & 78.99           & 64.99            & 38.99           \\
+        DBLP v10   & fastText & 87.99            & 78.99           & 64.99            & 38.99           \\
+        ACM v9 + DBLP v10   & BERT & 87.99            & 78.99           & 64.99            & 38.99           \\
+    \bottomrule
+    \end{tabular}
+\caption{Comparison between different corpus using LibLinear logistic regression model (in \%)}
+\label{tab:corpus}
+\end{table}

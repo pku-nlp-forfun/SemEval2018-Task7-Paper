@@ -1,0 +1,22 @@
+\begin{table}[htbp!] % here top bottom page (! = remove further restrictions)
+    \begin{tabular}{lccccc}
+    \toprule
+        \multicolumn{2}{c}{Task}                                                 & \multicolumn{2}{c}{Subtask 1.1} & \multicolumn{2}{c}{Subtask 1.2} \\
+    \midrule
+        Model & Feature                                                                 & Macro-F1        & Micro-F1       & Macro-F1        & Micro-F1       \\
+    \midrule
+        LibLinear\\ Logistic Regression    & embedding only & 88.99            & 78.99           & 64.99            & 38.99           \\
+        LibLinear\\ Logistic Regression    & + one-hot      & 88.99            & 78.99           & 64.99            & 38.99           \\
+        LibLinear\\ Logistic Regression    & + shape        & 88.99            & 78.99           & 64.99            & 38.99           \\
+        LibLinear\\ Logistic Regression    & + cluster      & 88.99            & 78.99           & 64.99            & 38.99           \\
+        LibLinear\\ Logistic Regression    & + e1, e2       & 88.99            & 78.99           & 64.99            & 38.99           \\
+        Scikit Learn\\ Logistic Regression & embedding only & 88.99            & 78.99           & 64.99            & 38.99           \\
+        Scikit Learn\\ Logistic Regression & + one-hot      & 88.99            & 78.99           & 64.99            & 38.99           \\
+        Scikit Learn\\ Logistic Regression & + shape        & 88.99            & 78.99           & 64.99            & 38.99           \\
+        Scikit Learn\\ Logistic Regression & + cluster      & 88.99            & 78.99           & 64.99            & 38.99           \\
+        Scikit Learn\\ Logistic Regression & + e1, e2       & 88.99            & 78.99           & 64.99            & 38.99           \\
+    \bottomrule
+    \end{tabular}
+\caption{Comparison between differen feature based on LibLinear and Scikit Learn Logistic Regression model (in \%)}
+\label{tab:ML_Model}
+\end{table}
