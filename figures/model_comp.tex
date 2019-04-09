@@ -1,15 +1,17 @@
 \begin{table}[htbp!] % here top bottom page (! = remove further restrictions)
     \begin{tabular}{lcccc}
     \toprule
-        \multicolumn{1}{c}{Task}                                                 & \multicolumn{2}{c}{Subtask 1.1} & \multicolumn{2}{c}{Subtask 1.2} \\
+        \multicolumn{1}{c}{Task}           & \multicolumn{2}{c}{Subtask 1.1}    & \multicolumn{2}{c}{Subtask 1.2}    \\
     \midrule
-        Model Name                                                                 & Macro-F1        & Micro-F1       & Macro-F1        & Micro-F1       \\
+        Model Name                         & Macro-F1         & Micro-F1        & Macro-F1         & Micro-F1        \\
     \midrule
-        LibLinear\\ Logistic Regression    & 88.99            & 78.99           & 64.99            & 38.99           \\
-        Scikit Learn\\ Logistic Regression & 87.99            & 78.99           & 64.99            & 38.99           \\
-        TextCNN                            & 87.99            & 78.99           & 64.99            & 38.99           \\
+        LibLinear\\ Logistic Regression    & 52.01            & -               & 69.15            & \bf81.41        \\
+        Scikit Learn\\ Logistic Regression & \bf52.77         & -               & 75.06            & 76.04           \\
+        Scikit Learn\\ Linear SVM          & 51.45            & -               & 70.29            & 75.56           \\
+        Scikit Learn\\ Decision Tree       & 36.65            & -               & -                & -               \\
+        TextCNN                            & 51.20            & 65.50           & \bf77.35         & 80.53           \\
     \bottomrule
     \end{tabular}
 \caption{Comparison between differen machine learning model using fastText embedding model on DBLP v10 corpus (in \%)}
-\label{tab:ML_Model}
+\label{tab:model}
 \end{table}

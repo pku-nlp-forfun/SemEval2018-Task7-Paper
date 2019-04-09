@@ -1,19 +1,20 @@
 \begin{table}[htbp!] % here top bottom page (! = remove further restrictions)
     \begin{tabular}{llcccc}
     \toprule
-        \multicolumn{2}{c}{Task}                                                 & \multicolumn{2}{c}{Subtask 1.1} & \multicolumn{2}{c}{Subtask 1.2} \\
+        \multicolumn{2}{c}{Task}          & \multicolumn{2}{c}{Subtask 1.1 Test} & \multicolumn{2}{c}{Subtask 1.1 Training} \\
     \midrule
-        Corpus & Embedding Model                                                               & Macro-F1        & Micro-F1       & Macro-F1        & Micro-F1       \\
+        Corpus & Embedding Model          & Macro-F1         & Micro-F1       & Macro-F1         & Micro-F1       \\
     \midrule
-        Pre-trained DBLP v5 & word2vec    & 88.99            & 78.99           & 64.99            & 38.99           \\
-        ACM v9 + DBLP v10   & word2vec & 87.99            & 78.99           & 64.99            & 38.99           \\
-        DBLP v5   & word2vec & 87.99            & 78.99           & 64.99            & 38.99           \\
-        DBLP v10   & word2vec & 87.99            & 78.99           & 64.99            & 38.99           \\
-        ACM v9 + DBLP v10   & fastText & 87.99            & 78.99           & 64.99            & 38.99           \\
-        DBLP v10   & fastText & 87.99            & 78.99           & 64.99            & 38.99           \\
-        ACM v9 + DBLP v10   & BERT & 87.99            & 78.99           & 64.99            & 38.99           \\
+        Pre-trained DBLP v5 & word2vec    & 44.61            & -              & \bf50.79         & -              \\
+        ACM v9 + DBLP v10   & word2vec    & 47.24            & -              & 49.45            & -              \\
+        DBLP v5             & word2vec    & 46.27            & -              & 50.08            & -              \\
+        DBLP v10            & word2vec    & 47.28            & -              & 50.28            & -              \\
+        DBLP v5             & fastText    & 49.12            & -              & 49.30            & -              \\
+        ACM v9 + DBLP v10   & fastText    & 50.21            & -              & 50.73            & -              \\
+        DBLP v10            & fastText    & \bf50.75         & -              & 49.72            & -              \\
+        ACM v9 + DBLP v10   & BERT        & 26.02            & -              & 32.82            & -              \\
     \bottomrule
     \end{tabular}
-\caption{Comparison between different corpus using LibLinear logistic regression model (in \%)}
-\label{tab:corpus}
+\caption{Comparison between different corpus using LibLinear logistic regression model on subtask 1.1 data (in \%)}
+\label{tab:embedding}
 \end{table}
