@@ -1,0 +1,17 @@
+\begin{table}[htbp!] % here top bottom page (! = remove further restrictions)
+    \begin{tabular}{lccccc}
+    \toprule
+        \multicolumn{1}{c}{Training Data}            & \multicolumn{2}{c}{Subtask 1.1 Test}  & \multicolumn{2}{c}{Subtask 1.2 Test} \\
+    \midrule
+        textCNN with 1.1 + 1.2 train data            & Macro-F1         & Micro-F1           & Macro-F1         & Micro-F1       \\
+    \midrule
+                    
+        - pad before entity1                         & 59.74            & 66.95              & 71.22            & 77.291         \\
+        - pad after entity1                          & 56.79            & 66.67              & 46.22            & -              \\
+        - pad before entity1                         & \bf67.74         & \bf72.03           &                  & -              \\
+        - pad after entity2                          & 57.70            & 65.63              & 66.73            & -              \\
+    \bottomrule
+    \end{tabular}
+\caption{Comparison between padding different position on textCNN model and use 1.1 + 1.2 Train data in order to solve the pad position effect (in \%)}
+\label{tab:data_pad}
+\end{table}
