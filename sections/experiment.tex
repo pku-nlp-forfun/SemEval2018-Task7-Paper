@@ -8,10 +8,18 @@ Because the TOPIC class in subtask 1.1 is unbalanced. So we can see the phenomen
 \subsection{Different Corpus and Embedding Model}
 \label{sec:different_corpus_and_embedding_model}
 
+Word embedding almost the important thing in NLP task. So we take some word embedding method and train dataSet to tune the effect of word embedding.~\ref{tab:embedding}
+
+First of all, the train dataSet of competition is so small that the effect of training word embedding is bad. So we import some outer dataSet to optimization the effect of word embedding. The domain of our task is about scientific papers. So, we load dataset on Citation Network Dataset. We test dblp v5, dblp v10, and acm v9, we find dblp v10 have best f1 score both in trainSet and testSet.
+
+We also do some work on different word embedding methods, like word2vec, Bert, fastText. FatsText do the best job in our experiment. Bert doesn't have a good effect on our task. We think it may be caused by the embedding size of the pre-train model.
+
 \input{figures/embedding_comp.tex}
 
 \subsection{Different Feature}
 \label{sec:different_feature}
+
+We also do some work on feature engineering.~\ref{tab:feature} We test the effect of different '[PAD]' position. Clustering is also one way to improve our model. We add both one-hot and word embedding of middle words between two entities to feature lists. And we also do some artificial features like have including '\_' in middle words between two entities. We do some experiment which one by one add features to model.
 
 \input{figures/feature_comp.tex}
 
@@ -19,3 +27,8 @@ Because the TOPIC class in subtask 1.1 is unbalanced. So we can see the phenomen
 \label{sec:different_model}
 
 \input{figures/model_comp.tex}
+
+\subsection{Imbalance Data}
+\label{sec:impalance_data}
+
+% \input{figures/imbalance_data.tex}

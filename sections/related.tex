@@ -63,7 +63,7 @@ We think this approach is much more reasonable than the previous one. Because th
 
 We have also observed some of the training samples. And conclude some possible pattern such that if the first word is end with "'s", then it possibly has maybe a sort of belonging relation between them.
 
-In LightRel, they have done many features, they called "word-shape feature", as well.[reference] But by our experiment, we found that. Using these features will only lower the performance. So we only use enable this as comparison purpose.
+In LightRel, they have done many features, they called "word-shape feature", as well. But by our experiment, we found that. Using these features will only lower the performance. So we only use enable this as comparison purpose.
 
 \begin{itemize}
     \item any character is capitalized
@@ -82,14 +82,14 @@ We found that the most significant improvement of the performance is related to 
 \subsubsection{Corpus}
 \label{sec:corpus}
 
-We selecting the candidate corpus on the Citation Network Dataset. This dataset provides the scientific paper of recent years. LightRel chooses DBLP  v5 combined with ACM v9. And extract out only the "Abstract" part of the paper using the regular expression.
+We selecting the candidate corpus on the Citation Network Dataset~\footnote{https://aminer.org/citation}~\cite{Tang:08KDD}. This dataset provides the scientific paper of recent years. LightRel chooses DBLP  v5 combined with ACM v9. And extract out only the "Abstract" part of the paper using the regular expression.
 
 We have done some combination of selection like testing by using DBLP v5 only or using DBLP v10 combined with ACM v9 etc.
 
 \subsubsection{Embedding Model}
 \label{sec:embedding_model}
 
-There are several tools that we have tried. Such as word2vec by Google (also used in LightRel), fastText by Facebook and BERT by Google.
+There are several tools that we have tried. Such as word2vec~\cite{NIPS2013_5021} by Google (also used in LightRel), fastText by Facebook and BERT by Google.
 
 We build the embedding with 300 dimension vector and skip the words with appearance less than 5 times. We use the mean of all other embeddings to deal with the out-of-vocabulary problem (i.e. the <UNK> token).
 
