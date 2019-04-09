@@ -75,16 +75,19 @@ In LightRel, they have done many features, they called "word-shape feature", as 
 \end{itemize}
 
 \subsection{Embedding}
+\label{sec:embedding}
 
 We found that the most significant improvement of the performance is related to embedding. There are two subjects: What corpus we choose to calculate the embedding. And what tools to form the embedding. We have made several tests.
 
 \subsubsection{Corpus}
+\label{sec:corpus}
 
 We selecting the candidate corpus on the Citation Network Dataset. This dataset provides the scientific paper of recent years. LightRel chooses DBLP  v5 combined with ACM v9. And extract out only the "Abstract" part of the paper using the regular expression.
 
 We have done some combination of selection like testing by using DBLP v5 only or using DBLP v10 combined with ACM v9 etc.
 
 \subsubsection{Embedding Model}
+\label{sec:embedding_model}
 
 There are several tools that we have tried. Such as word2vec by Google (also used in LightRel), fastText by Facebook and BERT by Google.
 

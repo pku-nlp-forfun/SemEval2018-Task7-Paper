@@ -1,13 +1,21 @@
-\documentclass[12pt, a4paper]{article}
+\documentclass[12pt]{article}
 \usepackage[utf8]{inputenc}
- 
+
+\usepackage{geometry}
+\geometry{a4paper, scale=0.8}
+
 % For prettier tables
 % replace \hline with \toprule, \midrule and \bottomrule
 \usepackage{booktabs}
+
 % For list spacing
 \usepackage{enumitem}
 \setlist{noitemsep} % or \setlist{nosep} to leave space around whole list
 % \setlist{nolistsep}
+
+% For multi-column
+\usepackage{multicol}
+\setlength{\columnsep}{1cm}
 
 \title{SemEval-2018 Task 7 Subtask 1: Semantic Relation Classification in Scientific Papers}
 \author{Hui-Qiang Jiang \quad Da-Wei Lee \\
@@ -21,11 +29,15 @@ Peking University \\
   \input{sections/abstract.tex}
 \end{abstract}
 
+\begin{multicols}{2}
+
 \input{sections/intro.tex}
 
 \input{sections/related.tex}
 
 \input{sections/model.tex}
+
+\end{multicols}{2}
 
 \input{sections/experiment.tex}
 
