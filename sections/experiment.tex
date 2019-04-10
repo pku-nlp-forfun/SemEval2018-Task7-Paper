@@ -44,9 +44,13 @@ The train dataset is an obvious imbalance set in subtask 1.1 Topic class. So we 
 
 \input{figures/imbalance_data.tex}
 
+The evaluation shows that class imbalance impacts the effect of subTask 1.1. But more data don't mean a better effect. When we add all data of subTask 1.2 including task and train data, we found the effect is worse than data fusing only subTask1.2 train data. And the over-sampling Topic class is not significant.
+
 \subsection{Pad Position}
 \label{sec:pad_position}
 
-The lens between twe entities is different in dataSet. So we should align word list before all word. We can put '[PAD]' before the entity1, after entity1, before entity2, after entity2. The result of 4 methods should be different. So we take some experimentation to explore this problem. We use TextCNN with Task1.1+Task1.2 Train dataSet, use 128 filters, filter size=[6,7,8], embedding size=300, learning rate = 0.0003, batch size = 64, decay step=1000.
+The lens between two entities is different in dataSet. So we should align word list before all word. We can put '[PAD]' before the entity1, after entity1, before entity2, after entity2. The result of 4 methods should be different. So we take some experimentation to explore this problem. We use TextCNN with Task1.1+Task1.2 Train dataSet, use 128 filters, filter size=[6,7,8], embedding size=300, learning rate = 0.0003, batch size = 64, decay step=1000.
 
 \input{figures/pad_position.tex}
+
+The evaluation shows that padding position is a vital parameter in our model. In all subTask, we found that adding pad before entity1 is a good way to improve the performance of our model.
