@@ -37,26 +37,19 @@ Except for linear regression model, we also do some experiment on SVM, LinerSVC,
 
 \input{figures/model_comp.tex}
 
-\begin{figure*}[ht]
-    \begin{center}
-    \includegraphics[width=0.85\textwidth]{figures/pad_example.pdf}
-    \end{center}
-    \caption{Pad example (MAX sentences size = 12)}
-    \label{fig:pad_example}
-\end{figure*}
-
-
 \subsection{Imbalance Data}
 \label{sec:impalance_data}
 
-The train dataset is an obvious imbalance set in subtask 1.1 Topic class. So we over-sampling the train set. We, in turn, add subtask 1.2 Train Topic, subtask 1.2 Test topic, subtask 1.2 Train, subtask 1.2 Test, subtask 1.2 to subtask1.1. And test the effect of over-sampling.
-
 \input{figures/imbalance_data.tex}
+
+The train dataset is an obvious imbalance set in subtask 1.1 Topic class. So we over-sampling the train set. We, in turn, add subtask 1.2 Train Topic, subtask 1.2 Test topic, subtask 1.2 Train, subtask 1.2 Test, subtask 1.2 to subtask1.1. And test the effect of over-sampling.
 
 The evaluation shows that class imbalance impacts the effect of subTask 1.1. But more data don't mean a better effect. When we add all data of subTask 1.2 including task and train data, we found the effect is worse than data fusing only subTask1.2 train data. And the over-sampling Topic class is not significant.
 
 \subsection{Pad Position}
 \label{sec:pad_position}
+
+\input{figures/pad_example.tex}
 
 The lens between two entities is different in dataSet. So we should align word list before all word. We can put '[PAD]' before the entity1, after entity1, before entity2, after entity2. The result of 4 methods should be different. So we take some experimentation to explore this problem. We use TextCNN with Task1.1+Task1.2 Train dataSet, use 128 filters, filter size=[6,7,8], embedding size=300, learning rate = 0.0003, batch size = 64, decay step=1000.
 
