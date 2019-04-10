@@ -89,7 +89,7 @@ We have done some combination of selection like testing by using DBLP v5 only or
 \subsubsection{Embedding Model}
 \label{sec:embedding_model}
 
-There are several tools that we have tried. Such as word2vec\footnote{\cite{NIPS2013_5021}} by Google (also used in LightRel), fastText\footnote{https://github.com/facebookresearch/fastText \cite{bojanowski2017enriching}} by Facebook and BERT\footnote{https://github.com/google-research/bert \cite{devlin2018bert}} by Google.
+There are several tools that we have tried. Such as word2vec\footnote{https://code.google.com/p/word2vec/ \cite{NIPS2013_5021}} by Google (also used in LightRel), fastText\footnote{https://github.com/facebookresearch/fastText \cite{bojanowski2017enriching}} by Facebook and BERT\footnote{https://github.com/google-research/bert \cite{devlin2018bert}} by Google.
 
 We build the embedding with 300 dimension vector and skip the words with appearance less than 5 times. We use the mean of all other embeddings to deal with the out-of-vocabulary problem (i.e. the [UNK] token).
 
